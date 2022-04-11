@@ -12,6 +12,7 @@ body {
     height: 238px;
 }
 .rcorners-cluster {
+    /* float:right; */
     box-shadow: 10px 10px 15px;
     margin: auto;
     margin-top: 20px;
@@ -20,6 +21,15 @@ body {
     background: rgb(144, 144, 144);
     border-radius: 25px;
     width: 1024px;
+    height: 576px;
+}
+.rcorners-left {
+    margin:auto;
+    box-shadow: 10px 10px 15px;
+    border: 15px solid rgb(144, 144, 144);
+    background: rgb(144, 144, 144);
+    border-radius: 25px;
+    width: 150px;
     height: 576px;
 }
 .reload {
@@ -36,6 +46,8 @@ body {
 }
 .loupe {
     position: absolute;
-    right: 0px;
+    right: 35px;
+    top: 50px;
+    width: 20%;
 
 }
