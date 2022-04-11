@@ -1,34 +1,52 @@
 <HTML>
     <HEAD>
-    <TITLE>Basics</TITLE>
+    <title>Basics</TITLE>
     </HEAD>
 
 <BODY>
     <style>
+        body {background-color: pink;}
+        h1 {text-align: center; color:white}
+
         .column {
             float: left;
             width: 25%;
             padding: 1px;
         }
+        .container {
+            box-sizing: border-box;
+            content: "";
+            clear: both;
+            display: table;
+        }
+        div.copyright {
+            font-family:monospace;
+            text-align: right;
+            font-style: italic;
+        }
         img {
             width:100%;
         }
-
-        body {background-color: pink;}
-        h1 {text-align: center; color:white}
+        
         </style>
 
     <h1>À la carte</h1> <BR />
-
-        <div class="column">
-            <IMG SRC="https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80"> <BR />
-                <A HREF="https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80"> Link</A>
+        <div class="container">
+            <div class="column">
+                <img src="https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80"> <BR />
+                    <a href="https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80"> Link</A>
                 </div>
-
-        <div class="column">
-            <IMG SRC="https://images.unsplash.com/photo-1561442101-ae4195e55eb1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80" >
-                <A HREF="https://images.unsplash.com/photo-1561442101-ae4195e55eb1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80"> Link</A>
+                
+                <div class="column">
+                    <img src="https://images.unsplash.com/photo-1561442101-ae4195e55eb1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80" >
+                        <a href="https://images.unsplash.com/photo-1561442101-ae4195e55eb1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80"> Link</A>
                     </div>
+                </div>      
+                <hr> <BR />
 
+                <div class="copyright">
+                    <p class="a">© hmaronen 2022</p>
+                </div>
+                <br \>
 </BODY>
 </HTML>
