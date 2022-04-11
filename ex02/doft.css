@@ -1,0 +1,41 @@
+body {
+    background-color: rgb(80, 80, 80);
+}
+.rcorners-42 {
+    box-shadow: 10px 10px 15px;
+    position: relative;
+    margin: auto;
+    border: 15px solid rgb(144, 144, 144);
+    background: rgb(144, 144, 144);
+    border-radius: 25px;
+    width: 2000px;
+    height: 238px;
+}
+.rcorners-cluster {
+    box-shadow: 10px 10px 15px;
+    margin: auto;
+    margin-top: 20px;
+    left: 50%;
+    border: 15px solid rgb(144, 144, 144);
+    background: rgb(144, 144, 144);
+    border-radius: 25px;
+    width: 1024px;
+    height: 576px;
+}
+.reload {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 2%;
+}
+.exit {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    width: 2%;
+}
+.loupe {
+    position: absolute;
+    right: 0px;
+
+}
