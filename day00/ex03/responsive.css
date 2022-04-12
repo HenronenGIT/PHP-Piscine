@@ -1,0 +1,42 @@
+.square {
+    display:inline-block;
+    height: 5vw;
+    width: 5vw;
+    border: 0.1vw solid black;
+    margin-bottom: 0.2vw;
+}
+.empty {
+    display:inline-block;
+    height: 5vw;
+    width: 5vw;
+    border: 0.1vw solid rgba(255, 255, 255, 0);
+    margin-bottom: 0.2vw;
+}
+.square-content-sign {
+    position: relative;
+    text-align: center;
+    top: 1.45vw;
+    font-weight: bold;
+    font-size: 1.5vw;
+}
+.square-content-weight {
+    position: relative;
+    text-align: right;
+    top: 2.25vw;
+    right: 0.2vw;
+    font-size: 0.8vw;
+}
+.square-content-number {
+    position: relative;
+    text-align:left;
+    top: 1.3vw;
+    left: 0.2vw;
+    font-size:0.8vw;
+}
+.image-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    border: 2px solid black;
+}
