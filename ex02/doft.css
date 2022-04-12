@@ -1,9 +1,15 @@
 body {
     background-color: rgb(80, 80, 80);
 }
-.rcorners-42 {
-    box-shadow: 10px 10px 15px;
+.container {
     position: relative;
+    margin: auto;
+    width: 1550px;
+    height: 300px;
+}
+.rcorners-42 {
+    position: relative;
+    box-shadow: 10px 10px 15px;
     margin: auto;
     border: 15px solid rgb(144, 144, 144);
     background: rgb(144, 144, 144);
@@ -12,25 +18,41 @@ body {
     height: 238px;
 }
 .rcorners-cluster {
-    /* float:right; */
+    position: relative;
+    transform: translate(10%, 2%);
+    float:left;
     box-shadow: 10px 10px 15px;
     margin: auto;
     margin-top: 20px;
-    left: 50%;
     border: 15px solid rgb(144, 144, 144);
     background: rgb(144, 144, 144);
-    border-radius: 25px;
+    border-radius: 20px;
     width: 1024px;
     height: 576px;
 }
 .rcorners-left {
-    margin:auto;
+    position: relative;
+    margin-top: 30px;
+    left: 75px;
+    float: left;
     box-shadow: 10px 10px 15px;
     border: 15px solid rgb(144, 144, 144);
     background: rgb(144, 144, 144);
+    border-radius: 20px;
+    width: 150px;
+    height: 450px;
+}
+.rcorners-right {
+    position: relative;
+    margin-top: 30px;
+    /* margin-left: 100px; */
+    float: right;
+    background: rgb(144, 144, 144);
+    border: 15px solid rgb(144, 144, 144);
+    box-shadow: 10px 10px 15px;
     border-radius: 25px;
     width: 150px;
-    height: 576px;
+    height: 450px;
 }
 .reload {
     position: absolute;
@@ -46,8 +68,83 @@ body {
 }
 .loupe {
     position: absolute;
-    right: 35px;
+    right: 50px;
     top: 50px;
     width: 20%;
-
+}
+ .arrow {
+    width: 50%;
+    margin-left: 30px;
+}
+.hand {
+    width: 50%;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+.eye {
+    width: 50%;
+    margin-left: 25px;
+    margin-top: 10px;
+    border: 7px solid red;
+    border-radius: 8px;
+}
+.outil {
+    width: 55%;
+    margin-left: 30px;
+    margin-top: 15px;
+}
+.chat {
+    width: 60%;
+    margin-left: 25px;
+    margin-top: 15px;
+}
+.book {
+    width: 65%;
+    margin-left: 25px;
+}
+.towel {
+    width: 65%;
+    margin-left: 25px;
+}
+.brick {
+    width: 25%;
+    float: left;
+}
+.green-box {
+    float: left;
+    transform: translate(-10%,-20%);
+    background-color: rgb(169, 251, 150);
+    box-shadow: 10px 10px 15px;
+    width: 690px;
+    height: 200px;
+    border-radius: 20px;
+}
+.text-1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    margin-left: 15px;
+    margin-top: 20px;
+}
+.text-2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 45px;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+.text-3 {
+    text-shadow: 10px 5px 5px #ff0000;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    margin-top: 20px;
+}
+.text-4 {
+    font-style: italic;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+.login {
+    margin-left: 15px;
+    width: 550px;
 }
