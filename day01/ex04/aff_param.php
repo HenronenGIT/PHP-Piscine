@@ -1,7 +1,9 @@
 #!/usr/bin/php
 <?php
-foreach ($argv as $word)
+$i = 1;
+while ($i < $argc)
 {
-    print("$word\n");
+    print("$argv[$i]\n");
+    $i++;
 }
 ?>
