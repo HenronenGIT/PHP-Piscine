@@ -6,6 +6,7 @@ while (1)
     $input = stream_get_line(STDIN, 0, "\n");
     if (feof(STDIN) == TRUE)
     {
+        echo("\n");
         break;
     }
     else if (is_numeric($input) == 0)
