@@ -1,14 +1,30 @@
 #!/usr/bin/php
 <?php
+function sort_words($str)
+{
+    if (is_numeric($str))
+        echo"number\n";
+    else if (!is_numeric($str))
+        echo"ascii\n";
+    else
+        echo"other\n";
+
+}
 $i = 1;
 unset($argv[0]);
-$words= array();
+$arr= array();
 while ($i < $argc)
 {
-    $arr = explode(' ', $argv[$i]);
-    $words = array_merge($words, $arr);
+    $temp_arr = explode(' ', $argv[$i]);
+    $arr = array_merge($temp_arr, $arr);
     $i++;
 }
-sort($words);
-print_r($words);
+foreach($arr as $word)
+{
+    sort_words($word);
+}
+
+
+//foreach($arr as $word)
+//    echo("$word\n");
 ?>
