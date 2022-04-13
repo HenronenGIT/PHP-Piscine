@@ -3,7 +3,7 @@
 $i = "1";
 while ($i <= 1000)
 {
-    echo"x";
+    echo"X";
     $i++;
 }
 echo"\n";

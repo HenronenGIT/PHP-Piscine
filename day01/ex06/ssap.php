@@ -11,5 +11,5 @@ while ($i < $argc)
 }
 sort($words);
 foreach($words as $word)
-    echo("$word\n");
+    print("$word\n");
 ?>
