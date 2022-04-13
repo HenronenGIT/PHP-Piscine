@@ -1,11 +1,14 @@
 #!/usr/bin/php
 <?php
 $i = 1;
+unset($argv[0]);
+$words= array();
 while ($i < $argc)
 {
-    $arr[$i] = [];
-    sort($arr);
+    $arr = explode(' ', $argv[$i]);
+    $words = array_merge($words, $arr);
     $i++;
 }
-print_r($argv);
+sort($words);
+print_r($words);
 ?>
