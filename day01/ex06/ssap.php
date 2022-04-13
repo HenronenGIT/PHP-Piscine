@@ -1,8 +1,11 @@
 #!/usr/bin/php
 <?php
-//$i = 1;
-foreach($argv as $word)
+$i = 1;
+while ($i < $argc)
 {
-    echo("$word\n");
+    $arr[$i] = [];
+    sort($arr);
+    $i++;
 }
+print_r($argv);
 ?>
