@@ -1,7 +1,6 @@
 <?php
-foreach ($_GET as $key)
+foreach ($_GET as $key => $value)
 {
-	print("$key: ");
-	print("$_GET[$key]\n");
+	print($key.": ".$value."\n");
 }
 ?>
