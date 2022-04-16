@@ -8,7 +8,6 @@ if ($_POST["submit"] == "OK")
     if (user_exist())
         panic();
     echo "OK\n";
-    // more /goinfre/hmaronen/mamp/apache2/htdocs/d04/private/passwd
 }
 else
     panic();
