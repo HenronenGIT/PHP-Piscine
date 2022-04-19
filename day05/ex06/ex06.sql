@@ -1,5 +1,5 @@
 SELECT `title`, `summary`
 FROM `film`
 WHERE `summary`
-LIKE BINARY '%Vincent%'
+LIKE '%Vincent%'
 ORDER BY `id_film` ASC;
