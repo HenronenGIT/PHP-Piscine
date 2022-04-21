@@ -18,4 +18,4 @@ class NightsWatch implements IFighter {
     }
 }
 
-?> 
+?>

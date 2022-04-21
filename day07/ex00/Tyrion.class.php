@@ -2,7 +2,7 @@
 
 class Tyrion extends Lannister {
 
-    public function __construct()
+    function __construct()
     {
         parent::__construct();
         print('My name is Tyrion'. PHP_EOL);
@@ -11,14 +11,7 @@ class Tyrion extends Lannister {
 
     function    getSize()
     {
-        print('Short');
-        return ;
-    }
-
-    function    houseMotto()
-    {
-        print('Hear me roar!');
-        return;
+        return ('Short');
     }
 }
 ?>

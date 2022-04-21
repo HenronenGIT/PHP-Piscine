@@ -1,11 +1,8 @@
 <?php
 
-//include ('Jaime.class.php');
-
 class Tyrion {
     public function sleepWith($inst)
     {
-        //print(get_class($inst));
         if (get_class($inst) == 'Jaime')
         {
             print("Not even if I'm drunk !" . PHP_EOL);
