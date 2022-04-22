@@ -14,35 +14,49 @@
                     height: 200px;
                     background-color: red;
                     border-radius: 100%;
+
                     transition: all 60ms linear;
+                    -webkit-transition: color .25s linear;
+                    transition: background-color .25s linear;
                 }
             </style>
     </head>
     <body>
         <div class="center-div">
-            <div id="balloon" onmouseover="shrink()" onclick="change_size()" style="width:200px; height: 200px; background-color: red;"></div>
+            <div id="balloon" onmouseout="shrink()" onclick="increase()" style="width:200px; height: 200px; background-color: red;"></div>
         </div>
             <script>
                 function shrink()
                 {
-                    console.log('hovered');
                     var balloon = document.getElementById("balloon")
                     var cur_h = balloon.offsetHeight;
                     var cur_w = balloon.offsetHeight;
+                    var min = 200;
+                    var cur_col = balloon.style.backgroundColor
                     
-                    balloon.style.height = cur_h - 5 + 'px';
-                    balloon.style.width = cur_w - 5 + 'px';
-
-
-                    
+                    if (cur_col == 'red')
+                        balloon.style.backgroundColor = 'blue';    
+                    else if (cur_col == 'green')
+                        balloon.style.backgroundColor = 'red';    
+                    else
+                        balloon.style.backgroundColor = 'green';
+                    if (cur_h != min)
+                    {
+                        balloon.style.width = cur_w - 5 + 'px';
+                        balloon.style.height = cur_h - 5 + 'px';
+                    }
+                    console.log(balloon.style.height)
                 }
-                function change_size()
+
+                function increase()
                 {
                     var balloon = document.getElementById("balloon")
-                    var current_color = balloon.style.backgroundColor
+                    var cur_col = balloon.style.backgroundColor
                     var cur_h = balloon.offsetHeight;
                     var cur_w = balloon.offsetHeight;
-                    if (cur_h > 420)
+                    var max = 430;
+
+                    if ((cur_h + 20) > max)
                     {
                         balloon.style.height = 200 + 'px';
                         balloon.style.width = 200 + 'px';
@@ -52,24 +66,13 @@
                         balloon.style.height = cur_h + 10 + 'px';
                         balloon.style.width = cur_w + 10 + 'px';
                     }
-
-                    if (current_color == 'red')
-                    {
+                    if (cur_col == 'red')
                         balloon.style.backgroundColor = 'green';    
-                    }
-                    else if (current_color == 'green')
-                    {
+                    else if (cur_col == 'green')
                         balloon.style.backgroundColor = 'blue';    
-                    }
                     else
-                    {
                         balloon.style.backgroundColor = 'red';
-                    }
-
-                }
-
-                function check_size() {
-                    
+                    console.log(balloon.style.height)
                 }
             </script>
     </body>
