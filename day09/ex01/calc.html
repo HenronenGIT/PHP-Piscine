@@ -1,10 +1,54 @@
+<!DOCTYPE html>
 <html>
     <head>
-        <title>
+        <title>Calculator</title>
+        <style>
+            .center-div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                min-height: 100vh;
+            }
+            #calculator {
+                height: 100px;
+                width: 450px;
+                background-color: gray;
+                border: 2px solid black;
+            }
+            /* #left-field {
 
-        </title>
+            }
+            #button {
+
+            }
+            #right-field {
+
+            } */
+        </style>
     </head>
     <body>
-        
+    <div class="center-div">
+        <div id="left-field">
+            <!-- <form action="calculator()"> -->
+                <input type="text" id="field" >
+                <select id="math" name="math">
+                    <option value="+" type="+" id="field">+</option>
+                    <option value="-" type="" id="field">-</option>
+                    <option value="*" type="" id="field">*</option>
+                    <option value="/" type="" id="field">/</option>
+                    <option value="%" type="" id="field">%</option>
+                </select>
+                <input type="text" id="field" >
+                <input type="submit" id="calc" value="Try me!">
+            <!-- </form> -->
+        </div>
+    </div>
+    <script>
+        var calc = document.getElementById("calc");
+        calc.id
+        console.log(calc);
+    </script>
+    
     </body>
 </html>
