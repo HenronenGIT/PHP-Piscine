@@ -21,7 +21,7 @@ function new_div(time)
 function insert_div(task, div)
 {
     var ft_list = document.getElementById('ft_list');
-    var task_text = document.createTextNode(task);
+    var task_text = document.createTextNode(decodeURIComponent(task));
     div.appendChild(task_text);
     ft_list.insertBefore(div, ft_list.firstChild);
     return ;
@@ -49,7 +49,7 @@ function setCookie(cname, cvalue, exdays)
     const cur_d = new Date();
     cur_d.setTime(cur_d.getTime() + (exdays*24*60*60*1000));
     let expires = "expires="+ cur_d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ":path=/";
+    document.cookie = cname + "=" + encodeURIComponent(cvalue) + ";" + expires + ":path=/";
 }
 
 function getCookie()
