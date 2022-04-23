@@ -40,7 +40,7 @@
             console.log(value);
                 alert(value);
         }
-
+    
         function calc()
         {
             // Variables
@@ -48,9 +48,10 @@
             var lfield = document.getElementById("left-field").value;
             var rfield = document.getElementById("right-field").value;
             var value = 0;
+            var regex = new RegExp(/^([0-9]+)$/);
 
             // Error handling
-            if (lfield == "" || rfield == "")
+            if (!regex.test(lfield) || !regex.test(rfield))
                 return (alert('Error :('));
             else
             {
