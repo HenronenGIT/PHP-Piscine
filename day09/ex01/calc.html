@@ -10,45 +10,105 @@
                 text-align: center;
                 min-height: 100vh;
             }
-            #calculator {
-                height: 100px;
-                width: 450px;
-                background-color: gray;
-                border: 2px solid black;
-            }
-            /* #left-field {
-
-            }
-            #button {
-
-            }
-            #right-field {
-
-            } */
         </style>
     </head>
     <body>
     <div class="center-div">
-        <div id="left-field">
-            <!-- <form action="calculator()"> -->
-                <input type="text" id="field" >
-                <select id="math" name="math">
-                    <option value="+" type="+" id="field">+</option>
-                    <option value="-" type="" id="field">-</option>
-                    <option value="*" type="" id="field">*</option>
-                    <option value="/" type="" id="field">/</option>
-                    <option value="%" type="" id="field">%</option>
-                </select>
-                <input type="text" id="field" >
-                <input type="submit" id="calc" value="Try me!">
-            <!-- </form> -->
-        </div>
+        <input type="text" id="left-field" required>
+        <select id="sign" name="math">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="text" id="right-field" required>
+        <input type="submit" id="calc" value="Try me!" onclick="calc()">
     </div>
     <script>
-        var calc = document.getElementById("calc");
-        calc.id
-        console.log(calc);
+        setInterval(function() {
+            timeout()
+        }, 30000)
+
+        function timeout()
+        {
+            alert('Please, use me...');
+        }
+
+        function calc()
+        {
+            // Variables
+            var sign = document.getElementById("sign").value;
+            var lfield = document.getElementById("left-field").value;
+            var rfield = document.getElementById("right-field").value;
+            var value = 0;
+
+            // Convert to int
+            l_nb = parseInt(lfield);
+            r_nb = parseInt(rfield);
+
+            // Error handling
+            if (l_nb < 0 || r_nb < 0)
+            {
+                alert('Error :(');
+                return ;
+            }
+            // Calculations
+            value = math(l_nb, r_nb, sign);
+            // Output
+            if (value == null)
+                return ;
+            else
+            {
+                console.log(value);
+                alert(value);
+            }
+
+            // Debug
+            //console.log(sign);
+            //console.log(lfield);
+            //console.log(rfield);
+            //console.log(calc);
+        }
+
+        function math(l_nb, r_nb, sign)
+        {
+            if (sign == '+')
+            {
+                return (l_nb + r_nb);
+            }
+            else if (sign == '-')
+            {
+                return(l_nb - r_nb);
+            }
+            else if (sign == '*')
+            {
+                return(l_nb * r_nb);
+            }
+            else if (sign == '/')
+            {
+                if (r_nb == 0)
+                {
+                    console.log("It's over 9000!");
+                    alert("It's over 9000!");
+                    return (null);
+                }
+                return(l_nb / r_nb);
+            }
+            else if (sign == '%')
+            {
+                if (r_nb == 0)
+                {
+                    console.log("It's over 9000!");
+                    alert("It's over 9000!");
+                    return (null);
+                }
+                console.log(l_nb % r_nb);
+                return(l_nb % r_nb);
+            }
+            else
+                return (null);
+        }
     </script>
-    
     </body>
 </html>
