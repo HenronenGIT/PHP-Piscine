@@ -35,6 +35,12 @@
             alert('Please, use me...');
         }
 
+        function output(value)
+        {
+            console.log(value);
+                alert(value);
+        }
+
         function calc()
         {
             // Variables
@@ -43,15 +49,18 @@
             var rfield = document.getElementById("right-field").value;
             var value = 0;
 
-            // Convert to int
-            l_nb = parseInt(lfield);
-            r_nb = parseInt(rfield);
-
             // Error handling
-            if (l_nb < 0 || r_nb < 0)
+            if (lfield == "" || rfield == "")
+                return (alert('Error :('));
+            else
             {
-                alert('Error :(');
-                return ;
+                l_nb = parseInt(lfield);
+                r_nb = parseInt(rfield);
+                if (l_nb < 0 || r_nb < 0)
+                {
+                    alert('Error :(');
+                    return ;
+                }
             }
             // Calculations
             value = math(l_nb, r_nb, sign);
@@ -59,16 +68,7 @@
             if (value == null)
                 return ;
             else
-            {
-                console.log(value);
-                alert(value);
-            }
-
-            // Debug
-            //console.log(sign);
-            //console.log(lfield);
-            //console.log(rfield);
-            //console.log(calc);
+                output(value);
         }
 
         function math(l_nb, r_nb, sign)
