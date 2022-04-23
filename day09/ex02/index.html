@@ -5,9 +5,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            text-align: center;
             min-height: 100vh;
         }
-
         #ft_list {
         }
 
@@ -15,15 +15,14 @@
         }
     </style>
     <head>
-        <title></title>
+        <h1>To do tasks</h1>
+        <title>ToDo Tasks</title>
     </head>
     <body>
         <script src="todo.js"></script>
-        <div class="center-div">
             <div id="ft_list">
             </div>
             <input type="submit" name="New" value="New" onclick="new_task()"></div>
-        </div>
     </body>
-    <body onload="getCookie('tasks')"></body>
+    <body onload="getCookie()"></body>
 </html>
