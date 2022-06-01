@@ -1,44 +1,117 @@
-/* Style The Dropdown Button */
-.dropbtn {
-	background-color: #4965ca;
-	color: white;
-	padding: 16px;
-	font-size: 16px;
-	border: none;
-	cursor: pointer;
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: rgb(47, 123, 142);
 }
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-	position: relative;
+
+li {
+	transition-duration: 0.5s;
+	float: left;
+
+}
+.navbar  {
+	color: white;
+	text-align: center;
+}
+
+li a, .dropbtn1 {
+	font-family:Arial, Helvetica, sans-serif;
+	font-style: italic;
+	font-size: large;
+	display: inline-block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+li a, .dropbtn2 {
+	font-family:Arial, Helvetica, sans-serif;
+	font-style: italic;
+	font-size: large;
+	display: inline-block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+li.dropdown1 {
 	display: inline-block;
 }
-/* Links inside the dropdown */
-.dropdown-content {
+li.dropdown2 {
+	display: inline-block;
+}
+
+li a:hover, .dropdown1:hover .dropbtn1 {
+	cursor:pointer;
+	background-color: rgb(79, 129, 142);
+	transition: 0.5s;
+}
+li a:hover, .dropdown2:hover .dropbtn2 {
+	cursor:pointer;
+	background-color: rgb(79, 129, 142);
+	transition: 0.5s;
+}
+
+.dropdown-content1 {
 	display: none;
 	position: absolute;
 	background-color: #f9f9f9;
 	min-width: 160px;
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-	padding: 12px 16px;
 	z-index: 1;
 }
-.dropdown-content a {
+
+.dropdown-content1 a {
 	color: black;
 	padding: 12px 16px;
-	text-decoration:none;
+	text-decoration: none;
 	display: block;
-  }
-/* Color changes on hover */
-.dropdown-content a:hover {background-color: #f1f1f1}
-.dropbtn a:hover {background-color: #dce0ed}
+	text-align: left;
+}
 
+.dropdown-content2 {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
 
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
+.dropdown-content2 a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+}
+
+/* .dropdown-content a:hover .sub-dropdown-content a:hover { */
+.dropdown-content1 a:hover {
+	background-color: #f1f1f1;
+}
+.dropdown-content2 a:hover {
+	background-color: #f1f1f1;
+}
+
+.dropdown1:hover .dropdown-content1 {
+	display: block;
+}
+.dropdown2:hover .dropdown-content2 {
 	display: block;
 }
 
-.dropdown:hover .dropbtn {
-	background-color: #62bcb4;
-	transition: 0.2s;
+.arrow {
+	border: solid black;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 3px;
+}
+
+.down {
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
 }
