@@ -1,30 +1,71 @@
 #!/usr/bin/php
 <?php
-function sort_words($str)
-{
-    if (is_numeric($str))
-        echo"number\n";
-    else if (!is_numeric($str))
-        echo"ascii\n";
-    else
-        echo"other\n";
+	// function sort_array($array, $b)
+	// {
+	// 	// $str = '!"#$%&()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~';
+	// 	$str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	// 	$str2 = "abcdefghijklmnopqrstuvwxyz";
+	// 	$str3 = "0123456789";
+	// 	$i = 0;
+	function sort_array($a, $b)
+	{
+		$line = "abcdefghijklmnopqrstuvwxyz0123456789!\"";
+	}
+	function foo($str)
+	{
+		while ($word[$i] != 0)
+		{
+			// print("$word[$i]");
+			if (stripos($word[$i], $numbers))
+			{
+				array_push($numbers, $word);
+				break;
+			}
+			else if (stripos($word[$i], $signs))
+				array_push($other, $word);
+			else
+				array_push($alpha, $word);
+			$i++;
+		}
+	}
+	unset($argv[0]);
+	$words = array();
+	$alpha = array();
+	$numerics = array();
+	$other = array();
+	$alphabet = "abcdefghijklmnopqrstuvwxyz";
+	$numbers = "0123456789";
+	$signs = "#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+	$i = 0;
 
-}
-$i = 1;
-unset($argv[0]);
-$arr= array();
-while ($i < $argc)
-{
-    $temp_arr = explode(' ', $argv[$i]);
-    $arr = array_merge($temp_arr, $arr);
-    $i++;
-}
-foreach($arr as $word)
-{
-    sort_words($word);
-}
-
-
-//foreach($arr as $word)
-//    echo("$word\n");
+	foreach ($argv as $word)
+	{
+		$arr = explode(' ', $word);
+		$words = array_merge($words, $arr);
+	}
+	foreach ($words as $word)
+	{
+		print("$word\n");
+		foo($word);
+		// while ($word[$i] != 0)
+		// {
+		// 	// print("$word[$i]");
+		// 	if (stripos($word[$i], $numbers))
+		// 	{
+		// 		array_push($numbers, $word);
+		// 		break;
+		// 	}
+		// 	else if (stripos($word[$i], $signs))
+		// 		array_push($other, $word);
+		// 	else
+		// 		array_push($alpha, $word);
+		// 	$i++;
+		// }
+	}
+		// print_r($numbers);
+		// print_r($alpha);
+		// print_r($other);
+	//usort($words, "sort_array");
+	//foreach ($words as $word)
+	//	print("$word\n");
 ?>
