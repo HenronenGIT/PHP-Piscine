@@ -36,7 +36,7 @@ class Vertex{
 			}
 			*/
 		if (self::$verbose)
-			print($this . "constructed\n");
+			print($this . " constructed\n");
 		return ;
 
 	}
@@ -47,7 +47,7 @@ class Vertex{
 		{
 			$str = sprintf(	"Vertex( x: %3.2f, y: %3.2f, z:%3.2f, w:%3.2f, ", $this->_x, $this->_y, $this->_z, $this->_w);
 			// $str .= sprintf(", ");
-			$str .= sprintf($this->_color) . " ) ";
+			$str .= sprintf($this->_color) . " )";
 		}
 		else
 			$str = sprintf(	"Vertex( x: %3.2f, y: %3.2f, z:%3.2f, w:%3.2f )", $this->_x, $this->_y, $this->_z, $this->_w);
@@ -64,7 +64,7 @@ class Vertex{
 	function	__destruct()
 	{
 		if (self::$verbose)
-			print($this . "destructed\n");
+			print($this . " destructed\n");
 		return ;
 	}
 }
