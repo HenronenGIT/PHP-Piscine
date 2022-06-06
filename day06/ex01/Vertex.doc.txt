@@ -1,3 +1,15 @@
 <- Vertex ----------------------------------------------------------------------
-Your documentation here.
+Vertex Class handles x, y, z and w coordinates.
+
+w coordinate is optional and if not defined - default value is 1.0.
+
+Vertex class can also take array key named 'color'. Value has to be an instance.
+If not defined, color will be set to white (255, 255, 255).
+
+Example input:
+	$vtxO  = new Vertex( array( 'x' => 0.0, 'y' => 0.0, 'z' => 0.0 ) );
+With color:
+	$red   = new Color( array( 'red' => 255, 'green' =>   0, 'blue' =>   0 ) );
+	$unitX = new Vertex( array( 'x' => 1.0, 'y' => 0.0, 'z' => 0.0, 'color' => $green ) );
+
 ---------------------------------------------------------------------- Vertex ->
