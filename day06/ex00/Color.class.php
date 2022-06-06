@@ -1,5 +1,5 @@
-<?php
 
+<?php
 class Color {
 	public static $verbose = False;
 	public $red = 0;
@@ -8,17 +8,19 @@ class Color {
 
 	function	__construct($rgb_array)
 	{
+		// foreach ($rgb_array as $element)
+
 		if (array_key_exists(red, $rgb_array))
-			$this->red = $rgb_array['red'];
+			$this->red = (int)$rgb_array['red'];
 		if (array_key_exists(green, $rgb_array))
-			$this->green = $rgb_array['green'];
+			$this->green = (int)$rgb_array['green'];
 		if (array_key_exists(blue, $rgb_array))
-			$this->blue = $rgb_array['blue'];
+			$this->blue = (int)$rgb_array['blue'];
 		if (array_key_exists(rgb, $rgb_array))
 		{
-			$this->red = ($rgb_array['rgb'] & 16711680) >> 16;
-			$this->green = ($rgb_array['rgb'] & 65280) >> 8;
-			$this->blue = ($rgb_array['rgb'] & 255);
+			$this->red = (int)($rgb_array['rgb'] & 16711680) >> 16;
+			$this->green = (int)($rgb_array['rgb'] & 65280) >> 8;
+			$this->blue = (int)($rgb_array['rgb'] & 255);
 		}
 		if (self::$verbose)
 			print($this . " constructed.\n");
@@ -53,7 +55,8 @@ class Color {
 	
 	function	__toString()
 	{
-		return 'Color( red: ' . $this->red . ' ,green: ' . $this->green . ' ,blue: ' . $this->blue . ')';
+		return sprintf("Color( red: %3s, green: %3s, blue: %3s )", $this->red, $this->green, $this->blue);
+		// return 'Color( red: ' . $this->red . ' ,green: ' . $this->green . ' ,blue: ' . $this->blue . ')';
 	}
 
 	static function	doc()
