@@ -20,25 +20,9 @@ class Vertex{
 			$this->_color = new Color( array('red' => 255, 'green' => 255, 'blue' => 255));
 		else
 			$this->_color = $array['color'];
-		// print_r(get_object_vars($this));
-			/*
-			if (array_key_exists(red, $rgb_array))
-			$this->red = $rgb_array['red'];
-			if (array_key_exists(green, $rgb_array))
-			$this->green = $rgb_array['green'];
-			if (array_key_exists(blue, $rgb_array))
-			$this->blue = $rgb_array['blue'];
-			if (array_key_exists(rgb, $rgb_array))
-			{
-				$this->red = ($rgb_array['rgb'] & 16711680) >> 16;
-				$this->green = ($rgb_array['rgb'] & 65280) >> 8;
-				$this->blue = ($rgb_array['rgb'] & 255);
-			}
-			*/
 		if (self::$verbose)
 			print($this . " constructed\n");
 		return ;
-
 	}
 	
 	function	__toString()
@@ -46,13 +30,10 @@ class Vertex{
 		if (self::$verbose)
 		{
 			$str = sprintf(	"Vertex( x: %3.2f, y: %3.2f, z:%3.2f, w:%3.2f, ", $this->_x, $this->_y, $this->_z, $this->_w);
-			// $str .= sprintf(", ");
 			$str .= sprintf($this->_color) . " )";
 		}
 		else
 			$str = sprintf(	"Vertex( x: %3.2f, y: %3.2f, z:%3.2f, w:%3.2f )", $this->_x, $this->_y, $this->_z, $this->_w);
-
-		// if ($this->_color)
 		return ($str);
 	}
 
@@ -67,5 +48,13 @@ class Vertex{
 			print($this . " destructed\n");
 		return ;
 	}
+	public function getX() { return ($this->_x);}
+	public function getY() { return ($this->_y);}
+	public function getZ() { return ($this->_z);}
+	public function getColor() { return ($this->_color);}
+	public function setX($x) { $this->_x = $x;}
+	public function setY($y) { $this->_y = $y;}
+	public function setZ($z) { $this->_z = $z;}
+	public function setColor($color) { $this->_color = $color;}
 }
 ?>
