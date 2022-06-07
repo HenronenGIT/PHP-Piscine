@@ -3,7 +3,7 @@
 $i = 1;
 while ($i < $argc)
 {
-    print("$argv[$i]\n");
-    $i++;
+	print("$argv[$i]\n");
+	$i++;
 }
 ?>

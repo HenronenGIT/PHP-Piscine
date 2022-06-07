@@ -1,6 +1,5 @@
 #!/usr/bin/php
 <?php
-
 if ($argc == 4)
 {
 	$i = 0;

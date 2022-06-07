@@ -2,7 +2,7 @@
 <?php
 		function sort_array($str1, $str2)
 		{
-			$chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcedfghijklmnopqrstuvwxyz0123456789!\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+			$chars = "abcedfghijklmnopqrstuvwxyz0123456789!\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
 			$i = 0;
 			while ($str1[$i] || $str2[$i])
 			{
@@ -17,7 +17,6 @@
 				$i++;
 			}
 		}
-
 	unset($argv[0]);
 	$words = array();
 	foreach ($argv as $word)
@@ -25,7 +24,6 @@
 		$arr = explode(' ', $word);
 		$words = array_merge($words, $arr);
 	}
-
 	usort($words, "sort_array");
 	foreach ($words as $word)
 		print("$word\n");
