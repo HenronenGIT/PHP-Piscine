@@ -5,9 +5,8 @@ function panic()
 	exit("Wrong Format\n");
 }
 
-function convert_day_month($string)
+function convert_day_month($array)
 {
-	// Check for bigger and lower case
 	$days = array(	"lundi" => "Monday",
 					"mardi" => "Tuesday",
 					"mercredi" => "Wednesday",
@@ -15,23 +14,20 @@ function convert_day_month($string)
 					"vendredi" => "Friday",
 					"samedi" => "Saturday",
 					"dimanche" => "Sunday");
-	$months = array('January',
-					'February',
-					'March',
-					'April',
-					'May',
-					'June',
-					'July ',
-					'August',
-					'September',
-					'October',
-					'November',
-					'December');
-	print_r($days);
-	// $format = "l-d-m-Y H:i:s";
-	// // $date = DateTime::createFromFormat($format, $string);
-	// $date = date_create_from_format($string, $format);
-	// print(date_format($date, "l-d-m-y H:i:s"));
+					
+	$months = array("janvier" => "January",
+					"février" => "February",
+					"mars" =>"March",
+					"avril" =>"April",
+					"mai" =>"May",
+					"juin" =>"June",
+					"juillet" =>"July",
+					"août" =>"August",
+					"septembre" =>"September",
+					"octobre" =>"October",
+					"novembre" =>"November",
+					"décembre" =>"December");
+	print(strtotime($days[$array[0]] . $array[1] . $months[$array[2]] . $array[3] . $array[4], date_default_timezone_set("Europe/Paris")) . "\n");
 }
 
 function is_valid_input($str)
@@ -46,12 +42,7 @@ if ($argc == 2)
 {
 	if (!is_valid_input($argv[1]))
 		panic();
-	$str = convert_day_month($argv[1]);
-	
-	// print(strtotime("tuesday 12 November 2013 12:02:21", date_default_timezone_set("Europe/Stockholm")) . "\n");
-	// print(strtotime("November tuesday 12 2013 12:02:21", date_default_timezone_set("Europe/Stockholm")) . "\n");
+	$info_array = explode(" ", strtolower($argv[1]));
+	convert_day_month($info_array);
 }
-// time zone
-//(?:(?:([01]?\d|2[0-3]):)?([0-5]?\d):)?([0-5]?\d)
-//(0[0-9]|1[0-9]|2[0-3]):(0[0-9]|1[0-9]|2[0-):(0[0-9])
 ?>
