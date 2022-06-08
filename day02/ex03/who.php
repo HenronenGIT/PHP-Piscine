@@ -3,7 +3,7 @@
 date_default_timezone_set('Europe/Helsinki');
 function output_user($arr)
 {
-	printf("%s %s %s\n", $arr["username"], $arr["terminal"], date("M j H:i", $arr["timestamp"]));
+	printf("%s %s  %s\n", $arr["username"], $arr["terminal"], date("M  j H:i", $arr["timestamp"]));
 }
 
 $file_ptr = fopen("/var/run/utmpx", "r");
