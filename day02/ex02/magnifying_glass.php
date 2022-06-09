@@ -1,15 +1,16 @@
 #!/usr/bin/php
 <?php
+	$regex0 = "/(?<=)<a.*?<\/a>/ism";
+	$regex1 = "/(?<=>).*?<|(?<=title)=\"(.*?)\"/ism";
 	if ($argc == 2)
 	{
-		$file = file_get_contents($argv[1]);
-
-		$result = preg_replace_callback("/(?<=<a) .*?>(.*?)</", function($match) {
-				return (str_replace($match[1], strtoupper($match[1]), $match[0]));
-			}, $file);
-			$result = preg_replace_callback("/(?<=title=\")(.*?)</s", function($match) {
-			return (str_replace($match[1], strtoupper($match[1]), $match[0]));
-		}, $result);
+		$str = implode("", file($argv[1]));
+		$result = $str;
+		preg_match_all($regex0, $str, $match);
+		$str = implode("", $match[0]);
+		preg_match_all($regex1, $str, $match);
+		foreach($match[0] as $string)
+			$result = preg_replace("/$string/", strtoupper($string), $result);
 		print($result);
 	}
 ?>
