@@ -12,8 +12,6 @@
 					return (1);
 				else if ($pos1 < $pos2)
 					return (-1);
-				else
-					return (0);
 				$i++;
 			}
 		}
