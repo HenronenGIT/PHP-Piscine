@@ -11,7 +11,7 @@ else if ($_GET["action"] == "get")
 		print("\n");
 	}
 }
-else
+else if ($_GET["action"] == "del")
 {
 	setcookie($_GET["name"], null, -1);
 }
