@@ -6,10 +6,7 @@ class Color {
 	public $green = 0;
 	public $blue = 0;
 
-	function	__construct($rgb_array)
-	{
-		// foreach ($rgb_array as $element)
-
+	function	__construct($rgb_array) {
 		if (array_key_exists(red, $rgb_array))
 			$this->red = (int)$rgb_array['red'];
 		if (array_key_exists(green, $rgb_array))
@@ -25,47 +22,40 @@ class Color {
 		if (self::$verbose)
 			print($this . " constructed.\n");
 		return ;
-
 	}
 
-	public function	add (Color $rgb_array )
-	{
-		$new_color = new Color( array(	'red' => $this->red + $rgb_array->red,
+	function	__toString() {
+		return sprintf(	"Color( red: %3s, green: %3s, blue: %3s )",
+						$this->red, $this->green, $this->blue);
+	}
+
+	static function	doc() {
+		return (file_get_contents("Color.doc.txt"));
+	}
+	
+	public function	add ($rgb_array) {
+		$new_color = new Color(array(	'red' => $this->red + $rgb_array->red,
 										'green' => $this->green + $rgb_array->green,
 										'blue' => $this->blue + $rgb_array->blue));
 		return ($new_color);
 	}
 	
-	function	sub($rgb_array)
-	{
-		$new_color = new Color( array(	'red' => $this->red - $rgb_array->red,
+	public function	sub($rgb_array) {
+		$new_color = new Color(array(	'red' => $this->red - $rgb_array->red,
 										'green' => $this->green - $rgb_array->green,
 										'blue' => $this->blue - $rgb_array->blue));
 		return ($new_color);
 	}
 	
-	function	mult($number)
-	{
-		$new_color = new Color( array(	'red' => $this->red * $number,
+	public function	mult($number) {
+		$new_color = new Color(array(	'red' => $this->red * $number,
 										'green' => $this->green * $number,
 										'blue' => $this->blue * $number));
 		return ($new_color);
 
 	}
 	
-	function	__toString()
-	{
-		return sprintf("Color( red: %3s, green: %3s, blue: %3s )", $this->red, $this->green, $this->blue);
-		// return 'Color( red: ' . $this->red . ' ,green: ' . $this->green . ' ,blue: ' . $this->blue . ')';
-	}
-
-	static function	doc()
-	{
-		return (file_get_contents("Color.doc.txt"));
-	}
-	
-	function	__destruct()
-	{
+	function	__destruct() {
 		if (self::$verbose)
 			print($this . " destructed.\n");
 		return ;

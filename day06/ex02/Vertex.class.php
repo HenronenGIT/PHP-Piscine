@@ -48,5 +48,13 @@ class Vertex{
 			print($this . " destructed\n");
 		return ;
 	}
+	public function getX() { return ($this->_x);}
+	public function getY() { return ($this->_y);}
+	public function getZ() { return ($this->_z);}
+	public function getColor() { return ($this->_color);}
+	public function setX($x) { $this->_x = $x;}
+	public function setY($y) { $this->_y = $y;}
+	public function setZ($z) { $this->_z = $z;}
+	public function setColor($color) { $this->_color = $color;}
 }
 ?>
