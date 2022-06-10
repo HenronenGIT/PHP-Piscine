@@ -1,7 +1,9 @@
 <- Vertex ----------------------------------------------------------------------
-Vertex Class handles x, y, z and w coordinates.
-
+Vertex Class handles x, y, z and w coordinates in the space.
+x,y and z coordinate are mandatory.
 w coordinate is optional and if not defined - default value is 1.0.
+
+Any other use is undefined behaviour!
 
 Vertex class can also take array key named 'color'. Value has to be an instance.
 If not defined, color will be set to white (255, 255, 255).
@@ -11,5 +13,4 @@ Example input:
 With color:
 	$red   = new Color( array( 'red' => 255, 'green' =>   0, 'blue' =>   0 ) );
 	$unitX = new Vertex( array( 'x' => 1.0, 'y' => 0.0, 'z' => 0.0, 'color' => $green ) );
-
 ---------------------------------------------------------------------- Vertex ->
