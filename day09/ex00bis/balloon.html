@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Javascript</title>
+        <style>
+            .center-div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                min-height: 100vh;
+            }
+            #balloon {
+                width: 200px;
+                height: 200px;
+                background-color: red;
+                border-radius: 100%;
+                transition: all 60ms linear;
+                -webkit-transition: color .25s linear;
+                transition: background-color .25s linear;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="center-div">
+            <div id="balloon"></div>
+        </div>
+		<script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script>
+                var clicked = false;
+
+				/* Clicking the balloon */
+				$('#balloon').click(function(balloon)
+				{
+					clicked = true;
+					var size = $('#balloon').width();
+					var color = $('#balloon').css('background-color');
+					var maxSize = 420
+
+					if (size + 10 <= maxSize)
+					{
+						$('#balloon').css({width: '+=10px'});
+						$('#balloon').css({height: '+=10px'});
+					}
+					else
+					{
+						$('#balloon').css({width: '200px'});
+						$('#balloon').css({height: '200px'});
+					}
+					if (color == 'rgb(255, 0, 0)')
+						$('#balloon').css({'background-color': 'green'});
+					else if (color == 'rgb(0, 128, 0)')
+						$('#balloon').css({'background-color': 'blue'});
+					else
+						$('#balloon').css({'background-color': 'red'});
+				});
+				
+				/* Hovering out of the balloon */
+				$('#balloon').mouseleave(function(balloon)
+				{
+					var color = $('#balloon').css('background-color');
+					var size = $('#balloon').width();
+					if (!clicked)
+					{
+						if (size > 200)	
+						{
+							$('#balloon').css({width: '-=5px'});
+							$('#balloon').css({height: '-=5px'});
+						}
+						if (color == 'rgb(255, 0, 0)')
+						$('#balloon').css({'background-color': 'blue'});
+						else if (color == 'rgb(0, 0, 255)')
+						$('#balloon').css({'background-color': 'green'});
+						else
+						$('#balloon').css({'background-color': 'red'});
+					}
+					clicked = false;
+				});
+            </script>
+    </body>
+</html>
