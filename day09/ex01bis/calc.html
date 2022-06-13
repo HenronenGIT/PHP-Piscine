@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Javascript</title>
+        <style>
+			body {
+				background-color: rgb(66, 66, 66);
+			}
+            .center-div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                min-height: 100vh;
+            }
+        </style>
+    </head>
+    <body>
+    <div class="center-div">
+        <input type="text" id="left-field" required>
+        <select id="operator" name="math">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="text" id="right-field" required>
+        <input type="submit" id="enter" value="Try me!">
+    </div>
+	<script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+	jQuery(document).ready(function() {
+
+        setInterval(function() {
+			alert('Please, use me...');
+        }, 30000)
+
+		$('#enter').click(function()
+		{
+			var value = 0;
+			var operator = $('#operator').val();
+			var leftNumber = $('#left-field').val();
+			var rightNumber = $('#right-field').val();
+			var valid_regex = new RegExp(/^([0-9]+)$/);
+
+            if (!valid_regex.test(leftNumber) || !valid_regex.test(rightNumber))
+                return (alert('Error :('));
+
+			value = $.fn.calculator(parseInt(leftNumber), parseInt(rightNumber), operator);
+			if (value)
+			{
+				console.log(value);
+				alert(value);
+			}
+			return ;
+		});
+
+		$.fn.calculator = function(leftNumber, rightNumber, operator) {
+			if (operator == '+')
+                return (leftNumber + rightNumber);
+            else if (operator == '-')
+                return(leftNumber - rightNumber);
+            else if (operator == '*')
+                return(leftNumber * rightNumber);
+            else if (operator == '/')
+            {
+                if (rightNumber == 0)
+                {
+                    console.log("It's over 9000!");
+                    alert("It's over 9000!");
+                    return (null);
+                }
+                return(leftNumber / rightNumber);
+            }
+            else if (operator == '%')
+            {
+                if (rightNumber == 0)
+                {
+                    console.log("It's over 9000!");
+                    alert("It's over 9000!");
+                    return (null);
+                }
+                console.log(leftNumber % rightNumber);
+                return(leftNumber % rightNumber);
+            }
+            else
+                return (null);
+		}
+            // var regex = new RegExp(/^([0-9]+)$/);
+
+            // // Error handling
+            // if (!regex.test(leftNumber) || !regex.test(rightNumber))
+            //     return (panic());
+            // else
+            // {
+            //     // leftNumber = parseInt(leftNumber);
+            //     // rightNumber = parseInt(rightNumber);
+            //     // if (leftNumber < 0 || rightNumber < 0)
+			// 		// return (panic());
+            // }
+            // // Calculations
+            // value = math(leftNumber, rightNumber, operator);
+            // // Output
+            // if (value == null)
+            //     return ;
+            // else
+            //     output(value);
+        // }
+
+	});
+    </script>
+    </body>
+</html>
