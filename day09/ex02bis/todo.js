@@ -7,71 +7,51 @@ jQuery(document).ready(function()
 			return ;
 		var time = $.now();
 		$.fn.create_element(time, task);
-            $.cookie("geeksforgeeks", 
-            "It is the data of the cookie");
-            $("p").text("cookie added");
+		$.fn.setCookie(time, task);
 		// setCookie(time, task, 30);
 	});
 
 	/* Clicking a task to remove it */
-	$('div').click(function(element) {
+	$('div').click(function(event) {
 		if (confirm("Are you sure you want to remove task?"))
 		{
-			$(element.target).remove();
-			// Cookie remove
+			$(event.target).remove();
+			$(event.target.id).remove();
+			var expires = "expires=Thu, 01 Jan 1970 00:00:00 UTC";
+    		document.cookie = event.target.id + "=;" + expires + ":path=/";
 		}
 	});
 
 	/* Create new element and prepend it */
 	$.fn.create_element = function(timeStamp, task) {
 			/* Test with decodeURIComponent(task) */
-		var div = $("<div>", {id: "task", text: task});
+		var div = $("<div>", {id: timeStamp, text: task});
 		$("#ft_list").prepend(div);
 	}
 
-	function new_div(time)
-	{
-		div.setAttribute("onclick", "rm_task(this, " + time + ")");
-		return (div);
-	}
-	/*
-	function rm_task(div, time_id)
-	{
-			rmCookie(time_id);
-		return ;
-	}
-	*/
-
-	// Cookie functions
-	function rmCookie(time_id)
-	{
-		var expires = "expires=Thu, 01 Jan 1970 00:00:00 UTC";
-		document.cookie = time_id + "=;" + expires + ":path=/";
+	$.fn.setCookie = function(timeStamp, task) {
+		console.log("test")
+		var expireDay = 30;
+		const currentDate = new Date();
+		/* Converting seconds to milliseconds */
+		currentDate.setTime(currentDate.getTime() + (expireDay * 24 * 60 * 60 * 1000));
+		let cExpire = "expires="+ currentDate.toUTCString();
+		document.cookie = timeStamp + "=" + encodeURIComponent(task) + ";" + cExpire + ":path=/";
 	}
 
-	function setCookie(cname, cvalue, exdays)
-	{
-		const cur_d = new Date();
-		cur_d.setTime(cur_d.getTime() + (exdays*24*60*60*1000));
-		let expires = "expires="+ cur_d.toUTCString();
-		document.cookie = cname + "=" + encodeURIComponent(cvalue) + ";" + expires + ":path=/";
-	}
+	/* Get cookies */
+	let cookies = document.cookie;
+	if (!cookies)
+		return;
+	let cookieArray = cookies.split(';');
+	let i = 0;
 
-	function getCookie()
+	while (i < cookieArray.length)
 	{
-		let cookies = document.cookie;
-		if (!cookies)
-			return;
-		let carr = cookies.split(';');
-		let i = 0;
-		while (i < carr.length)
-		{
-			let cookie = carr[i];
-			cookie_value = cookie.split('=');
-			div = new_div(cookie_value[0]);   
-			insert_div(cookie_value[1], div);
-			i++
-		}
-		return ;
+		let cookie = cookieArray[i];
+		cookieValue = cookie.split('=');
+		div = $.fn.create_element(cookieValue[0],cookieValue[1]);
+		i++;
 	}
+	return ;
 });
