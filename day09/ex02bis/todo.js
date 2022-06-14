@@ -8,7 +8,6 @@ jQuery(document).ready(function()
 		var time = $.now();
 		$.fn.create_element(time, task);
 		$.fn.setCookie(time, task);
-		// setCookie(time, task, 30);
 	});
 
 	/* Clicking a task to remove it */
@@ -24,7 +23,6 @@ jQuery(document).ready(function()
 
 	/* Create new element and prepend it */
 	$.fn.create_element = function(timeStamp, task) {
-			/* Test with decodeURIComponent(task) */
 		var div = $("<div>", {id: timeStamp, text: task});
 		$("#ft_list").prepend(div);
 	}
@@ -33,7 +31,6 @@ jQuery(document).ready(function()
 		console.log("test")
 		var expireDay = 30;
 		const currentDate = new Date();
-		/* Converting seconds to milliseconds */
 		currentDate.setTime(currentDate.getTime() + (expireDay * 24 * 60 * 60 * 1000));
 		let cExpire = "expires="+ currentDate.toUTCString();
 		document.cookie = timeStamp + "=" + encodeURIComponent(task) + ";" + cExpire + ":path=/";
@@ -50,7 +47,7 @@ jQuery(document).ready(function()
 	{
 		let cookie = cookieArray[i];
 		cookieValue = cookie.split('=');
-		div = $.fn.create_element(cookieValue[0],cookieValue[1]);
+		div = $.fn.create_element(cookieValue[0], decodeURIComponent(cookieValue[1]));
 		i++;
 	}
 	return ;
