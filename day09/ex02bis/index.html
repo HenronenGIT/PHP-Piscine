@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>JavaScript</title>
+        <title>ToDo</title>
+		<script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="todo.js"></script>
         <style>
             .center-div {
                 display: flex;
@@ -11,17 +13,16 @@
                 min-height: 100vh;
             }
             #ft_list {
+				
             }
-        
             #task {
+				font-family:'Times New Roman', Times, serif
             }
         </style>
     </head>
     <body>
-        <script src="todo.js"></script>
-            <div id="ft_list">
-            </div>
-            <input type="submit" name="New" value="New" onclick="new_task()"></div>
+            <div id="ft_list"></div>
+            <input id ="submit" type="submit" name="New" value="New"></div>
     </body>
-    <body onload="getCookie()"></body>
+    <!-- <body onload="getCookie()"></body> -->
 </html>
