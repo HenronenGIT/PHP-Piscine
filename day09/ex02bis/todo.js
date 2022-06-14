@@ -38,17 +38,17 @@ jQuery(document).ready(function()
 
 	/* Get cookies */
 	let cookies = document.cookie;
-	if (!cookies)
-		return;
-	let cookieArray = cookies.split(';');
-	let i = 0;
-
-	while (i < cookieArray.length)
+	if (cookies)
 	{
-		let cookie = cookieArray[i];
-		cookieValue = cookie.split('=');
-		div = $.fn.create_element(cookieValue[0], decodeURIComponent(cookieValue[1]));
-		i++;
+		let cookieArray = cookies.split(';');
+		let i = 0;
+		
+		while (i < cookieArray.length)
+		{
+			let cookie = cookieArray[i];
+			cookieValue = cookie.split('=');
+			div = $.fn.create_element(cookieValue[0], decodeURIComponent(cookieValue[1]));
+			i++;
+		}
 	}
-	return ;
 });
