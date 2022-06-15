@@ -1,26 +1,14 @@
 <?php
-
 class Jaime {
 
-    public function sleepWith($inst)
+    public function sleepWith($object)
     {
-        if (get_class($inst) == 'Tyrion')
-        {
-            print("Not even if I'm drunk !" . PHP_EOL);
-        }
-        else if (get_class($inst) == 'Sansa')
-        {
-            print("Let's do this." . PHP_EOL);
-        }
-        else if(get_class($inst) == 'Cersei')
-        {
-            print("With pleasure, but only in a tower in Winterfell, then." . PHP_EOL);
-        }
-        else
-        {
-            return ;
-        }
+		if ($object instanceof Tyrion)
+			print("Not even if I'm drunk !" . PHP_EOL);
+		else if ($object instanceof Cersei)
+			print("With pleasure, but only in a tower in Winterfell, then." . PHP_EOL);
+		else
+			print("Let's do this." . PHP_EOL);
     }
 }
-
 ?>
