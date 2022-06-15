@@ -2,18 +2,18 @@
 
 class NightsWatch implements IFighter {
 
-    public $arr = array();
+    public $array = array();
 
     function recruit($soldier)
     {
-        $this->arr[] = $soldier;
+        $this->array[] = $soldier;
     }
     function fight()
     {
-        foreach ($this->arr as $index)
+        foreach ($this->array as $index)
         {
             if ($index instanceof IFighter)
-            $index->fight();
+            	$index->fight();
         }
     }
 }
