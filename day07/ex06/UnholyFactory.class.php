@@ -9,7 +9,6 @@
             if (in_array($person, $this->arr))
             {
                 echo "(Factory already absorbed a fighter of type ". $person . ")" . PHP_EOL;
-                //echo $person . ')' . PHP_EOL;
                 $this->arr[] = $person;
             }
             else if (!get_parent_class($person) == 'Fighter')
