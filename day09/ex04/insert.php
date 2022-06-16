@@ -1,4 +1,6 @@
 <?php
-	print_r($_POST);
-	file_put_contents('list.csv', $_GET['test']);
+$file = "list.csv";
+
+file_put_contents($file, $_GET['test']);
+
 ?>

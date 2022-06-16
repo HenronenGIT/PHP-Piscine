@@ -9,10 +9,10 @@ jQuery(document).ready(function()
 		$.fn.create_element(time, task);
 		$.ajax({
 				// method: 'GET',
-				method: 'POST',
-				// url: 'insert.php?date_id=' + date_id + '&input=' + input
+				method: 'GET',
 				url: 'insert.php',
 				data: { test: 'test'}
+				// url: 'insert.php?date_id=' + date_id + '&input=' + input
 			})
 			
 			// $.fn.setCookie(time, task);
